@@ -26,7 +26,7 @@ const HeroSection = () => {
   return (
     <section className="relative w-full min-h-screen overflow-hidden font-[Poppins]">
       <Slider {...settings} className="w-full">
-        <div className="relative w-full min-h-[500px] md:min-h-screen">
+        <div className="relative w-full min-h-[500px] md:min-h-screen overflow-hidden">
           {/* Background Video */}
           <motion.video
             className="absolute inset-0 w-full h-full object-cover"
@@ -45,30 +45,19 @@ const HeroSection = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/70"></div>
 
           {/* Content */}
-          <div className="relative z-10 flex flex-col items-center justify-center h-screen px-4 sm:px-8 md:px-16 text-center mt-30 md:mt-10">
+          <div className="relative z-10 flex flex-col items-center justify-center h-screen px-4 sm:px-8 md:px-16 text-center mt-16">
             
             {/* Heading */}
             <motion.h1
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[Wonder] font-extrabold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-white to-yellow-300 drop-shadow-lg"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[Newheading] font-extrabold leading-snug bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-white to-yellow-300 drop-shadow-md whitespace-nowrap"
               variants={textVariants}
               initial="hidden"
               animate="visible"
             >
-              Experience the Soul of <span className="text-yellow-400">South India</span> in Every Grain
+              Welcome To Our Cauvery Rice Brand
             </motion.h1>
 
-            {/* Subtext */}
-            <motion.p
-              className="mt-4 sm:mt-6 text-sm sm:text-lg md:text-xl max-w-xl sm:max-w-2xl text-white/80 italic drop-shadow-md tracking-wide"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-              transition={{ delay: 0.5 }}
-            >
-              For over a decade, <span className="font-bold text-yellow-400">Cauvery Rice</span> has been the gold standard of Ponni rice, uniting three generations of farming mastery with cutting-edge innovation. Sourced from the lush Cauvery Delta and aged to perfection, our rice isn’t just a meal—it’s a legacy on your plate.
-            </motion.p>
-
-            {/* CTA Buttons */}
+            {/* Optional CTA Buttons */}
             <motion.div
               className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-4 justify-center"
               variants={textVariants}
@@ -88,20 +77,7 @@ const HeroSection = () => {
               >
                 Discover Our Story
               </motion.button>
-            </motion.div>
-
-            {/* Featured Highlights */}
-            <motion.div
-              className="mt-8 sm:mt-12 flex flex-col sm:flex-row gap-4 sm:gap-6 text-sm sm:text-lg md:text-xl font-semibold text-white/90 justify-center"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-              transition={{ delay: 1 }}
-            >
-              <p>✅ 100% Pesticide-Free</p>
-              <p>✅ 14-Month Aged Perfection</p>
-              <p>✅ Advanced Hygienic Milling</p>
-            </motion.div>
+            </motion.div> 
           </div>
         </div>
       </Slider>

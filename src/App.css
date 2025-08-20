@@ -18,7 +18,7 @@
   }
 @font-face {
     font-family: 'Newheading';  /* Name you will use in Tailwind */
-    src: url('../public/Fonts/CaviarDreams.ttf') format('truetype');
+    src: url('../public/Fonts/Brand.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }

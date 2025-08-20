@@ -25,9 +25,9 @@ const Home = () => {
   <div className="relative z-10 flex flex-col min-h-screen">
   <div id='home'>
         <Header />
-     <Timeline />
-     <Carousel />
+     {/* <Timeline /> */}
      <Aboutus />
+     <Carousel />
      <Bennar />
      <Chooseus />
      <ProcessSection />

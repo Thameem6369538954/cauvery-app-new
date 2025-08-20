@@ -3,11 +3,19 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
-import Rice from "../Images/Rice.png";
-import KKA from "../Images/KKA.png";
+import Rice from "../assets/Rice Bag/brown rice 2.png";
+import KKA from "../assets/Rice Bag/idli 2.png";
+import KKB from "../assets/Rice Bag/ponni 2.png";
+import KKC from "../assets/Rice Bag/raw green 2.png";
 import ponni from "../Images/ponni.png";
 
 const products = [
+   {
+    image: KKA,
+    title: 'Bulk & Wholesale',
+    description: 'Custom packaging for hotels, restaurants, and exporters.',
+    rating: 4.0,
+  },
   {
     image: ponni,
     title: 'Classic Ponni Raw Rice',
@@ -15,19 +23,20 @@ const products = [
     rating: 4.5,
   },
   {
-    image: ponni,
+    image: Rice,
     title: 'Aged Ponni Sella Rice',
     description: 'Ideal for biryanis, fried rice, and gourmet dishes. 14-month aged, extra-long grains, aromatic richness.',
     rating: 4.8,
   },
   {
-    image: ponni,
+    image: KKB,
     title: 'Organic Ponni Rice',
     description: 'Certified organic – perfect for health-conscious families.',
     rating: 4.3,
   },
+ 
   {
-    image: ponni,
+    image: KKC,
     title: 'Bulk & Wholesale',
     description: 'Custom packaging for hotels, restaurants, and exporters.',
     rating: 4.0,
@@ -44,7 +53,7 @@ const Carousel = () => {
   return (
     <div id="pro" className="relative py-16 px-4 sm:px-6 lg:px-20 bg-white">
       {/* Animated Absolute Background Images */}
-      <motion.img
+      {/* <motion.img
         src={Rice}
         alt="Decorative Rice"
         className="absolute lg:left-[60%] md:left-[50%] top-0 pointer-events-none select-none"
@@ -52,8 +61,8 @@ const Carousel = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false }}
         transition={{ duration: 1, delay: 0.5 }}
-      />
-      <motion.img
+      /> */}
+      {/* <motion.img
         src={KKA}
         alt="Decorative KKA"
         className="absolute lg:left-0 md:left-0 top-0 pointer-events-none select-none -z-10 md:z-1"
@@ -61,7 +70,7 @@ const Carousel = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false }}
         transition={{ duration: 1, delay: 0.7 }}
-      />
+      /> */}
 
       {/* Headings */}
       <div className="relative z-10 text-center mb-12">
@@ -110,7 +119,7 @@ const Carousel = () => {
               {/* Overlay */}
               <motion.div
                 className={`absolute inset-0 p-4 flex flex-col justify-end rounded-2xl
-                  bg-gradient-to-t from-[#9f0712]/80 via-black/30 to-transparent
+                  bg-gradient-to-t from-[#4ba971]/80 via-black/30 to-transparent
                   transition-opacity duration-300
                   ${activeIndex === index ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
               >

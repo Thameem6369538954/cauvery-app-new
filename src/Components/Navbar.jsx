@@ -39,10 +39,8 @@ const Navbar = () => {
           duration={500}
           className="flex items-center cursor-pointer"
         >
-          <img src={LOGO} alt="Logo" className="h-12 w-12 object-contain" />
-          <span className="ml-2 text-gray-900 font-bold text-xl md:text-2xl">
-            Bottomline
-          </span>
+          <img src={LOGO} alt="Logo" className="h-22 w-22 object-contain" />
+       
         </ScrollLink>
 
         {/* Desktop Navigation */}

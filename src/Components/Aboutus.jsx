@@ -1,102 +1,51 @@
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import CertA from "../Certif/CertA.jpeg";
-import CertB from "../Certif/CertB.jpeg";
-import CertC from "../Certif/CertC.jpeg";
-import MM from "../Images/MM.png";
+import React from "react";
+import { motion } from "framer-motion";
+import AboutImg from "../Images/as.png"; // Replace with your image path
 
-const images = [
-  { src: CertA, label: "ISO 9001: Certified" },
-  { src: CertB, label: "Premium Quality Standards" },
-  { src: CertC, label: "Trusted by Customers" },
-];
+const aboutVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+};
 
-const Aboutus = () => {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const goToSlide = (idx) => {
-    setIndex(idx);
-  };
-
+const AboutUs = () => {
   return (
-    <div className="bg-gradient-to-b from-white to-gray-100 py-20 px-6 sm:px-10 lg:px-24">
-      {/* Heading Section */}
-      <div className="flex flex-col items-center text-center mb-16">
-        <h1 className="font-[Wonder] text-4xl sm:text-5xl md:text-6xl text-[#9f0712] tracking-tight drop-shadow-md">
-          Why We Are Special
-        </h1>
-        <img src={MM} className="w-28 md:w-40 lg:w-48 mt-6" alt="MM Logo" />
-      </div>
-
-      {/* Content Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        {/* Left Content */}
+    <section className="w-full py-20 bg-gray-50 px-4 md:px-16 font-[Poppins]">
+      <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center gap-8 md:gap-16">
+        
+        {/* Text */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="bg-white p-10 rounded-3xl shadow-2xl space-y-6"
+          className="md:w-1/2 text-center md:text-left"
+          variants={aboutVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
         >
-          <p className="text-lg md:text-xl text-gray-700 font-[Poppins] leading-relaxed">
-            <span className="text-[#9f0712] font-[Heading] text-2xl md:text-3xl ">
-              Cauvery
-            </span>{" "}
-            – the distinguished Ponni rice brand curated by GSNR Rice Industries Private Limited – epitomizes excellence in the agro-products realm. Established in 2008, we are a vanguard processor and purveyor of premium agricultural commodities in Tamil Nadu, anchored in a heritage spanning three generations.
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 drop-shadow-md">
+            About Us
+          </h2>
+          <p className="text-gray-700 text-base sm:text-lg md:text-xl leading-relaxed md:leading-loose tracking-wide">
+            Our unique milling and manufacturing processes ensure that we deliver pesticide-free products of international quality. Our time-tested methodologies, quality control measures and dedicated, skilled workforce have paved the way for our product excellence. Like the course of our life-giver, our beloved River Cauvery, we flow across the regions of delta, pick up the best food grains of the land, and bring them to the ocean called global market.
           </p>
-
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-[#9f0712] hover:bg-[#7d060e] text-white px-8 py-3 rounded-full font-semibold shadow-lg transition duration-300"
-          >
-            Know More
-          </motion.button>
         </motion.div>
 
-        {/* Right Carousel */}
-        <div className="relative w-full flex flex-col items-center">
-          <div className="relative w-full overflow-hidden rounded-3xl shadow-xl bg-white p-6 flex items-center justify-center">
-            <AnimatePresence mode="wait">
-              <motion.img
-                key={index}
-                src={images[index].src}
-                alt={images[index].label}
-                className="w-full max-w-sm object-contain"
-                initial={{ opacity: 0, scale: 1.05 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.8, ease: "easeInOut" }}
-              />
-            </AnimatePresence>
-            <div className="absolute bottom-4 left-4 bg-white bg-opacity-90 px-4 py-2 rounded-md text-sm font-semibold text-[#9f0712] shadow">
-              {images[index].label}
-            </div>
-          </div>
-
-          <div className="flex gap-2 mt-4">
-            {images.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => goToSlide(i)}
-                className={`h-3 w-3 rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-[#9f0712] focus:ring-offset-2 ${
-                  index === i
-                    ? "bg-[#9f0712] scale-125 shadow"
-                    : "bg-gray-300 hover:bg-[#9f0712]"
-                }`}
-              ></button>
-            ))}
-          </div>
-        </div>
+        {/* Image */}
+        <motion.div
+          className="md:w-1/2 flex justify-center"
+          variants={aboutVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+        >
+          <img
+            src={AboutImg}
+            alt="About Us"
+            className="w-full h-auto  object-cover"
+          />
+        </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default Aboutus;
+export default AboutUs;
