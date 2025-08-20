@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'Heading';  /* Name you will use in Tailwind */
+    src: url('../public/Fonts/MachineryScript_PERSONAL_USE_ONLY.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+@font-face {
+    font-family: 'Poppins';  /* Name you will use in Tailwind */
+    src: url('../public/Fonts/Poppins-ExtraLight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+@font-face {
+    font-family: 'Perfectly';  /* Name you will use in Tailwind */
+    src: url('../public/Fonts/Perfectly\ Vintages\ Font\ by\ Keithzo.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+@font-face {
+    font-family: 'Newheading';  /* Name you will use in Tailwind */
+    src: url('../public/Fonts/CaviarDreams.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+@font-face {
+    font-family: 'Wonder';  /* Name you will use in Tailwind */
+    src: url('../public/Fonts/Wondar\ Quason\ Free.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  /* Hide scrollbar for Chrome, Safari, Edge */
+::-webkit-scrollbar {
+  display: none;
+}
+/* General page styling */
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Locomotive Scroll main container */
+.scroll-container {
+  min-height: 100vh !important;
+  height: auto !important;
+}
+
+/* Ensure each scroll section takes the full viewport height */
+[data-scroll-section] {
+  min-height: 40vh;
+  height: auto !important;
+  will-change: transform;
+}
+
+/* Fix issues with fixed position elements */
+[data-scroll-container] [data-scroll-section] {
+  will-change: transform;
+}
+
+/* Adjustments for mobile and tablets */
+@media (max-width: 1024px) {
+  [data-scroll-container] {
+    min-height: 100vh;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  [data-scroll-container] {
+    min-height: 100%;
+  }
+}
+
