@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion";
 import SLB from "../Images/SLB.jpg";
-import New from "../Images/New.jpg"
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -15,13 +14,14 @@ const Footer = () => {
 
   return (
     <footer
-      className="relative text-white py-16 font-[poppins] bg-cover bg-center bg-no-repeat"
+      className="relative text-white py-16 font-[Poppins] bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${SLB})` }}
     >
       <div className="absolute inset-0 bg-black/70 z-0"></div>
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-        {/* Key Links */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+        {/* Top Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center sm:text-left">
+          {/* Key Links */}
           <div>
             <h2 className="text-lg font-semibold mb-3">Key Links</h2>
             <ul className="space-y-2">
@@ -34,31 +34,40 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-          
-          {/* Social Proof */}
+
+          {/* Contact Info */}
           <div>
-            <h2 className="text-lg font-semibold mb-3">Social Proof</h2>
-            <div className="flex justify-center space-x-4">
-              {[New, New, New].map((badge, index) => (
-                <img key={index} src={badge} alt="Badge" className="h-12" />
-              ))}
-            </div>
+            <h2 className="text-lg font-semibold mb-3">Contact Us</h2>
+            <p>📞 +91 9944697777</p>
+            <p>🌐 <a href="https://www.cauveryrice.com" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-500 transition">www.cauveryrice.com</a></p>
+            <p>✉️ info@cauveryrice.com</p>
           </div>
-          
-          {/* Social Media */}
+
+          {/* Factory Address */}
           <div>
-            <h2 className="text-lg font-semibold mb-3">Follow Us</h2>
-            <div className="flex justify-center space-x-4 text-2xl">
-              {[FaFacebook, FaTwitter, FaInstagram, FaLinkedin].map((Icon, index) => (
-                <a key={index} href="#" className="hover:text-yellow-500 transition">
-                  <Icon />
-                </a>
-              ))}
-            </div>
+            <h2 className="text-lg font-semibold mb-3">Factory</h2>
+            <p>56, Kodikal Street, Mathanam South,</p>
+            <p>Poovalur, Lalgudi, Tiruchirappalli - 621 712</p>
+          </div>
+
+          {/* Registered Office */}
+          <div>
+            <h2 className="text-lg font-semibold mb-3">Registered Office</h2>
+            <p>21, C.V. Raman Road, Alwarpet,</p>
+            <p>Chennai - 600 028</p>
           </div>
         </div>
 
-        {/* CTA Section */}
+        {/* Social Media */}
+        <div className="mt-10 flex justify-center md:justify-end space-x-6 text-2xl">
+          {[FaFacebook, FaTwitter, FaInstagram, FaLinkedin].map((Icon, index) => (
+            <a key={index} href="#" className="hover:text-yellow-500 transition">
+              <Icon />
+            </a>
+          ))}
+        </div>
+
+        {/* Newsletter */}
         <motion.div
           className="mt-10 text-center"
           initial={{ opacity: 0, y: 30 }}

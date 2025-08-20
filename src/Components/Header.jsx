@@ -54,7 +54,7 @@ const HeroSection = () => {
               initial="hidden"
               animate="visible"
             >
-              Welcome To Our Cauvery Rice Brand
+              Welcome To Our <br /> Cauvery Rice Brand
             </motion.h1>
 
             {/* Optional CTA Buttons */}

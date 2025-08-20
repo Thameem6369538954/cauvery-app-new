@@ -10,7 +10,7 @@ const aboutVariants = {
 const AboutUs = () => {
   return (
     <section className="w-full py-20 bg-gray-50 px-4 md:px-16 font-[Poppins]">
-      <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center gap-8 md:gap-16">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-16">
         
         {/* Text */}
         <motion.div
