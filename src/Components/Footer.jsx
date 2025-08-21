@@ -35,12 +35,18 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Registered Office */}
           <div>
-            <h2 className="text-lg font-semibold mb-3">Contact Us</h2>
-            <p>📞 +91 9944697777</p>
-            <p>🌐 <a href="https://www.cauveryrice.com" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-500 transition">www.cauveryrice.com</a></p>
-            <p>✉️ info@cauveryrice.com</p>
+            <h2 className="text-lg font-semibold mb-3">Registered Office</h2>
+            <p>21, C.V. Raman Road, Alwarpet,</p>
+            <p>Chennai - 600 028</p>
+          </div>
+
+          {/* Branch Add */}
+          <div>
+            <h2 className="text-lg font-semibold mb-3">Branch Office</h2>
+            <p>No: 27, Annamalai Nagar Ext</p>
+            <p>Tiruchirappalli - 620 018</p>
           </div>
 
           {/* Factory Address */}
@@ -49,22 +55,22 @@ const Footer = () => {
             <p>56, Kodikal Street, Mathanam South,</p>
             <p>Poovalur, Lalgudi, Tiruchirappalli - 621 712</p>
           </div>
-
-          {/* Registered Office */}
-          <div>
-            <h2 className="text-lg font-semibold mb-3">Registered Office</h2>
-            <p>21, C.V. Raman Road, Alwarpet,</p>
-            <p>Chennai - 600 028</p>
-          </div>
         </div>
 
         {/* Social Media */}
         <div className="mt-10 flex justify-center md:justify-end space-x-6 text-2xl">
-          {[FaFacebook, FaTwitter, FaInstagram, FaLinkedin].map((Icon, index) => (
-            <a key={index} href="#" className="hover:text-yellow-500 transition">
-              <Icon />
-            </a>
-          ))}
+          <a href="https://www.facebook.com/cauveryrice" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-500 transition">
+            <FaFacebook />
+          </a>
+          <a href="https://twitter.com/cauveryrice" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-500 transition">
+            <FaTwitter />
+          </a>
+          <a href="https://www.instagram.com/cauveryrice" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-500 transition">
+            <FaInstagram />
+          </a>
+          <a href="https://www.linkedin.com/company/cauveryrice" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-500 transition">
+            <FaLinkedin />
+          </a>
         </div>
 
         {/* Newsletter */}

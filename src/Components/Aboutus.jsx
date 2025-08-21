@@ -9,7 +9,7 @@ const aboutVariants = {
 
 const AboutUs = () => {
   return (
-    <section className="w-full py-20 bg-gray-50 px-4 md:px-16 font-[Poppins]">
+    <section id="abt" className="w-full py-20 bg-gray-50 px-4 md:px-16 font-[Poppins]" >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-16">
         
         {/* Text */}
@@ -20,7 +20,7 @@ const AboutUs = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 drop-shadow-md">
+          <h2 className="font-[Wonder] text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#9f0712] mb-4">
             About Us
           </h2>
           <p className="text-gray-700 text-base sm:text-lg md:text-xl leading-relaxed md:leading-loose tracking-wide">

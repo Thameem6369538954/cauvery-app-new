@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaPhone, FaWhatsapp, FaEnvelope, FaGlobe } from "react-icons/fa";
+import { FaPhone, FaWhatsapp, FaEnvelope, FaDownload } from "react-icons/fa";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({ name: "", email: "", query: "" });
@@ -27,33 +27,47 @@ const ContactUs = () => {
       </motion.h2>
 
       <div className="grid md:grid-cols-2 gap-10">
+        {/* Contact Info */}
         <motion.div
-          className="space-y-6  p-6 rounded-lg shadow-lg"
+          className="space-y-6 p-6 rounded-lg shadow-lg"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="flex items-center space-x-4">
+          <a
+            href="https://wa.me/919944697777"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center space-x-4 hover:text-green-500 transition"
+          >
             <FaWhatsapp className="text-green-500 text-3xl" />
-            <p>24/7 WhatsApp Support</p>
-          </div>
-          <div className="flex items-center space-x-4">
+            <p>Chat with us on WhatsApp</p>
+          </a>
+
+          <a href="tel:+919944697777" className="flex items-center space-x-4 hover:text-blue-500 transition">
             <FaPhone className="text-blue-500 text-3xl" />
-            <p>Call Us Anytime</p>
-          </div>
-          <div className="flex items-center space-x-4">
+            <p>Call Us: +91 9944697777</p>
+          </a>
+
+          <a href="mailto:Info@cauveryrice.com" className="flex items-center space-x-4 hover:text-red-500 transition">
             <FaEnvelope className="text-red-500 text-3xl" />
-            <p>Email: support@cauveryrice.com</p>
-          </div>
-          <div className="flex items-center space-x-4">
-            <FaGlobe className="text-purple-500 text-3xl" />
-            <p>Seamless Global Shipping</p>
-          </div>
+            <p>Email: Info@cauveryrice.com</p>
+          </a>
+
+          <a
+            href="public/Pdf/INTERNATIONAL BROCHURE-Cauvery.pdf"
+            download
+            className="flex items-center space-x-4 hover:text-yellow-500 transition"
+          >
+            <FaDownload className="text-yellow-500 text-3xl" />
+            <p>Download Our Brochure</p>
+          </a>
         </motion.div>
 
+        {/* Contact Form */}
         <motion.form
           onSubmit={handleSubmit}
-          className=" p-6 rounded-lg shadow-lg space-y-4"
+          className="p-6 rounded-lg shadow-lg space-y-4"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
@@ -97,4 +111,3 @@ const ContactUs = () => {
 };
 
 export default ContactUs;
-  

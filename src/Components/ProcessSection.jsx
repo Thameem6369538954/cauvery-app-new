@@ -20,7 +20,7 @@ const OurProducts = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 drop-shadow-md">
+          <h2 className="font-[Wonder] text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#9f0712] mb-4">
             Our Products
           </h2>
           <a

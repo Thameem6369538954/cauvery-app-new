@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { FiMenu, FiX } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
-import LOGO from "../Images/LOGO.jpeg";
+import LOGO from "../Images/LOGO.png";
 
 const navItems = [
   { id: "home", label: "Home" },
-  { id: "target", label: "About Us" },
+  { id: "abt", label: "About Us" }, // make sure this matches your AboutUs section id
   { id: "pro", label: "Products" },
   { id: "con", label: "Contact" },
 ];
@@ -23,12 +23,12 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const navHeight = 80; // adjust based on your navbar height
+
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white shadow-lg backdrop-blur-md"
-          : "bg-white/90"
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 font-[Poppins] ${
+        scrolled ? "bg-white shadow-lg backdrop-blur-md" : "bg-white/90"
       }`}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center p-4 md:px-8">
@@ -37,10 +37,10 @@ const Navbar = () => {
           to="home"
           smooth={true}
           duration={500}
+          offset={-navHeight}
           className="flex items-center cursor-pointer"
         >
           <img src={LOGO} alt="Logo" className="h-22 w-22 object-contain" />
-       
         </ScrollLink>
 
         {/* Desktop Navigation */}
@@ -51,6 +51,7 @@ const Navbar = () => {
                 to={item.id}
                 smooth={true}
                 duration={500}
+                offset={-navHeight}
                 className="relative group cursor-pointer transition-colors duration-300 hover:text-yellow-500"
               >
                 {item.label}
@@ -85,6 +86,7 @@ const Navbar = () => {
                 to={item.id}
                 smooth={true}
                 duration={500}
+                offset={-navHeight}
                 className="text-gray-900 text-lg font-semibold hover:text-yellow-500"
                 onClick={toggleMenu}
               >
